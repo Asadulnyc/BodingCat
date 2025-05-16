@@ -5,7 +5,7 @@ public class DrawingExample extends JFrame {
 
     public DrawingExample() {
         setTitle("Drawing Example");
-        setSize(400, 300);
+        setSize(400,   3300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         add(new DrawingPanel());
         setVisible(true);
