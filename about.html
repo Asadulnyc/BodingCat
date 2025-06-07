@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BodingCat Help</title>
+    <link rel="icon" type="image/x-icon" href="../images/icon.png" />
+
+    <style>
+      img {
+        width: 100px;
+        border-radius: 10px;
+        float: left;
+        margin-right: 10px;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: sans-serif;
+        background-color: #eff1f5;
+        color: #4c4f69;
+        margin-top: 40px;
+        margin-left: 40px;
+      }
+
+      label {
+        font-weight: bold;
+      }
+
+      table {
+        table-layout: fixed;
+        text-align: center;
+        margin: 20px auto;
+        margin-top: 5px;
+        border: 1px solid black;
+        border-collapse: collapse;
+        width: 80%;
+      }
+
+      th,
+      td {
+        border: 1px solid black;
+        padding: 10px;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <img src="../images/logo.png" alt="BodingCat Logo" />
+    <h1>About BodingCat</h1>
+
+    <p>
+      To introduce my client, his name is Alexander Lipatov. The problem that he
+      faced was that, after completing his AP CSA and AP CSP courses, he felt
+      that CodingBat was no longer as useful to him anymore. This was because he
+      became largely proficient in both Python and Java, the only two languages
+      that CodingBat offers questions on. As a result, when I arrived to him
+      with the idea of recreating CodingBat such that it had an expanded
+      curriculum that also taught other languages, he readily agreed to
+      supporting the project. As his requirements, he stated the following
+      criteria:
+    </p>
+
+    <p>The new website is visually appealing.</p>
+    <p>The new website provides proper HTML questions.</p>
+    <p>The new website gives the user more aid in solving the problems.</p>
+
+    <br />
+
+    <p>
+      My program is a parody of the CodingBat website, aptly named BodingCat.
+      The program is designed to provide the user with three main types of
+      exercises, those being categorized as HTML questions, CSS questions, and
+      JavaScript questions. For each category, there is an accompanying webpage
+      that provides 5 exercises each. The amount is small due to this
+      presentation being mostly a demonstration and time constraints, but the
+      program is built to accommodate the inclusion of more questions. Each
+      question is listed off in a table at the top of each page and the user
+      must choose which question they are to complete through the use of a
+      drop-down menu. Both the table and the drop-down menus are generated
+      through two respective functions. This is possible because all of the
+      questions for each category are written in an array of arrays where each
+      question is one array and bears objects that are used to store the
+      question’s name, description, and solution. The JavaScript questions
+      include an additional object that defines the test cases. It should also
+      be noted that these questions were generated through AI, which is cited in
+      the code and in the citations page. Anyways, through this, the functions
+      iterate through the array, collecting each question’s position in the
+      array, name, and, in the case of the table, the question’s description and
+      display in the respective table and menu. A similar process and function
+      exists to display the name and description of the question once it is
+      selected by the user in the drop-down menu.
+    </p>
+    <p>
+      My program is a parody of the CodingBat website, aptly named BodingCat.
+      The program is designed to provide the user with three main types of
+      exercises, those being categorized as HTML questions, CSS questions, and
+      JavaScript questions. For each category, there is an accompanying webpage
+      that provides 5 exercises each. The amount is small due to this
+      presentation being mostly a demonstration and time constraints, but the
+      program is built to accommodate the inclusion of more questions. Each
+      question is listed off in a table at the top of each page and the user
+      must choose which question they are to complete through the use of a
+      drop-down menu. Both the table and the drop-down menus are generated
+      through two respective functions. This is possible because all of the
+      questions for each category are written in an array of arrays where each
+      question is one array and bears objects that are used to store the
+      question’s name, description, and solution. The JavaScript questions
+      include an additional object that defines the test cases. It should also
+      be noted that these questions were generated through AI, which is cited in
+      the code and in the citations page. Anyways, through this, the functions
+      iterate through the array, collecting each question’s position in the
+      array, name, and, in the case of the table, the question’s description and
+      display in the respective table and menu. A similar process and function
+      exists to display the name and description of the question once it is
+      selected by the user in the drop-down menu.
+    </p>
+    <p>
+      In the JavaScript category, there is no iframe. Rather, there are three
+      test cases that the user must correctly respond to. The responses in this
+      are more helpful to the user, as they specify what the user did
+      incorrectly.
+    </p>
+    <p>
+      Unfortunately, there is no hint system in the program. Instead, the option
+      to view the code’s solution always exists right next to the run code
+      button through the ‘show solution’ button. By clicking on the button, the
+      default solution is pasted into the textarea, allowing the user to also
+      run the code and alter it as they like or see what specifically they did
+      wrong. It also acts as a way of showing the different ways to achieve the
+      same programming goal.
+    </p>
+    <p>
+      Outside of the 3 question categories and the main page, there are also two
+      additional web pages that the user may browse. The first is the Citations
+      page, which is split in two. The left half lists off a table of resources
+      that the program’s creator used to a significant extent in writing the
+      program. On the other side, the right half lists off the three people
+      mainly responsible for the program’s creation. These are the creator, the
+      client, and the creator’s advisor during the project.
+    </p>
+    <p>
+      Lastly, the about page details generic information about the program
+      itself, mainly the documentation.
+    </p>
+    <br />
+    <p>
+      The first main challenge that I faced after I decided on making this
+      project was the most monumental one, which was I had never used HTML
+      before and didn’t even know what it looked like. It might seem a bit off
+      that I would opt to create my final project in a language I didn’t even
+      know, but, regrettably, I decided that, since I didn’t know how to write
+      HTML, I would learn it. Mainly, I watched some youtube videos and checked
+      in with W3Schools, Mozilla, and StackOverflow whenever I had an idea and
+      didn’t know if it was possible in HTML. I also asked for help from my
+      friend Brian, who was extremely adept at the language.
+    </p>
+    <p>
+      After that hurdle, I struggled to make the core of my program, which was
+      the actual code storing and compiling process itself. I spent a lot of
+      time consulting with the aforementioned sources, initially attempting to
+      use an input box to receive the code and trying to create a separate
+      webpage to display the user’s code. Thankfully, before I went through with
+      that, I discovered that iframe and text areas were readily available to
+      me.
+    </p>
+    <p>
+      While I was making my compiler program, I checked in with my client to
+      show him my progress. I assured him that the compiler was on the way, but
+      the first thing he commented on was how the web page looked. It was as
+      barebones as CodingBat, and looked extremely disorganized, too, which went
+      against the initial criteria he had for the project. At the same time, I
+      showed Brian my work and he commented the same thing. To help, he showed
+      me the catppuccin website and its available color palettes. I took both of
+      their critiques to heart, returning with a more visually appealing design
+      that used soft blue colors and varied text rather than the default
+      settings. I also incorporated a proper icon and logo image for my program.
+      As a result, both my client and Brian were satisfied.
+    </p>
+    <p>
+      The last major challenge that I faced was in figuring out how to compile
+      the JavaScript code. My original idea was to have the user type out the
+      whole HTML code like I did with teh HTML and CSS categories, but Brian
+      redirected me towards using try…catch, eval, and push instead since that
+      would only require the user to type the function instead. I browsed a lot
+      through the Mozilla pages he sent me and had to do a lot of
+      troubleshooting, but I managed to get it to work in the end somehow.
+    </p>
+    <br />
+    <p>
+      The user should download the program. If github doesn’t have the files in
+      their respective folders, I attached a google drive. After getting the
+      file in the right form, open the index file and work from there. Pick any
+      of the categories, answer the questions as best as possible, compare your
+      answers with the default solution, and move on to another one when done.
+      Then, the user is free to do whatever they feel like, whether it be
+      closing the program or browsing through the pages.
+    </p>
+  </body>
+</html>

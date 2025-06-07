@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JavaScript Questions</title>
+    <link rel="icon" type="image/x-icon" href="../images/icon.png" />
+
+    <style>
+      img {
+        width: 100px;
+        border-radius: 10px;
+        float: left;
+        margin-right: 10px;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: sans-serif;
+        background-color: #eff1f5;
+        color: #4c4f69;
+      }
+
+      label {
+        font-weight: bold;
+      }
+
+      table {
+        text-align: center;
+        margin: 20px auto;
+        border: 1px solid black;
+        border-collapse: collapse;
+        width: 80%;
+      }
+
+      th,
+      td {
+        border: 1px solid black;
+        padding: 10px;
+        font-size: 20px;
+      }
+
+      #container {
+        width: 80%;
+        height: 60%;
+        padding: 20px;
+        background-color: #dce0e8;
+      }
+
+      input,
+      textarea {
+        background-color: #dce0e8;
+        padding: 10px;
+        margin-bottom: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 15px;
+      }
+
+      textarea {
+        font-family: monospace;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: #1e66f5;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #7287fd;
+      }
+
+      .question-header {
+        margin-bottom: 1rem;
+      }
+
+      .question-description {
+        font-size: large;
+        margin-bottom: 20px;
+      }
+
+      #results {
+        margin-top: 1rem;
+        background: #dce0e8;
+        padding: 1rem;
+        border-radius: 6px;
+        font-family: monospace;
+        white-space: pre-wrap;
+        line-height: 2;
+      }
+    </style>
+  </head>
+
+  <body>
+    <img src="../images/logo.png" alt="BodingCat Logo" />
+	<h1>JS Exercises</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Number</th>
+          <th>Question Name</th>
+          <th>Question Description</th>
+        </tr>
+      </thead>
+      <tbody id="tablebody"></tbody>
+    </table>
+    <br /><br />
+
+    <!--center background blob-->
+    <div id="container">
+      <!--Dropdown menu-->
+      <div class="question-header">
+        <label for="questionSelect">Select Question: </label>
+        <select id="questionSelect"></select>
+      </div>
+
+      <h1 id="questionTitle"></h1>
+      <p id="questionDescription" class="question-description"></p>
+
+      <textarea
+        id="code"
+        name="code"
+        rows="15"
+        placeholder="Write your code here..."
+      ></textarea>
+      <button onclick="testCode()">Run Code</button>
+      <button onclick="showSolution()">Show Solution</button>
+
+      <div id="results"></div>
+    </div>
+
+    <script>
+      const questions = [
+        {
+          name: "Addition",
+          description:
+            "Create a function called <code>add</code> that takes two numerical parameters and returns their sum.",
+          tests: {
+            "add(2, 3)": "5",
+            "add(4, 3)": "7",
+            "add(-1, 1)": "0",
+          },
+          solution: `function add(a, b) {
+  return a + b;
+}`,
+        },
+        {
+          name: "Find Maximum",
+          description:
+            "Create a function called <code>max</code> that takes two numbers and returns the larger one.",
+          tests: {
+            "max(10, 5)": "10",
+            "max(-3, 7)": "7",
+            "max(4, 4)": "4",
+          },
+          solution: `function max(a, b) {
+  return a > b ? a : b;
+}`,
+        },
+        {
+          name: "Even or Odd",
+          description:
+            "Create a function called <code>isEven</code> that returns <code>true</code> if a number is even and <code>false</code> if it's odd.",
+          tests: {
+            "isEven(4)": "true",
+            "isEven(7)": "false",
+            "isEven(0)": "true",
+          },
+          solution: `function isEven(num) {
+  return num % 2 === 0;
+}`,
+        },
+        {
+          name: "String Reversal",
+          description:
+            "Create a function called <code>reverseString</code> that takes a string and returns it reversed.",
+          tests: {
+            "reverseString('hello')": "'olleh'",
+            "reverseString('world')": "'dlrow'",
+            "reverseString('')": "''",
+          },
+          solution: `function reverseString(str) {
+  return str.split('').reverse().join('');
+}`,
+        },
+        {
+          name: "Factorial",
+          description:
+            "Create a function called <code>factorial</code> that returns the factorial of a given non-negative integer.",
+          tests: {
+            "factorial(0)": "1",
+            "factorial(3)": "6",
+            "factorial(5)": "120",
+          },
+          solution: `function factorial(n) {
+  if (n === 0) return 1;
+  return n * factorial(n - 1);
+}`,
+        },
+      ];
+
+      function showSolution() {
+        document.getElementById("code").value =
+          questions[currentIndex].solution;
+      }
+
+      let currentIndex = 0;
+
+      const questionSelect = document.getElementById("questionSelect");
+      const questionTitle = document.getElementById("questionTitle");
+      const questionDescription = document.getElementById(
+        "questionDescription"
+      );
+
+      questions.forEach((q, i) => {
+        const option = document.createElement("option");
+        option.value = i;
+        option.textContent = `${i + 1}: ${q.name}`;
+        questionSelect.appendChild(option);
+      });
+      questions.forEach((q, i) => {
+        const item = document.createElement("tr");
+        item.innerHTML = `
+        <td>${i + 1}</td>
+        <td>${q.name}</td>
+        <td>${q.description}</td}
+        `;
+        tablebody.appendChild(item);
+      });
+
+      function loadQuestion(index) {
+        currentIndex = index;
+        const q = questions[index];
+        questionTitle.innerHTML = `<strong>${q.name}</strong>`;
+        questionDescription.innerHTML = q.description;
+        document.getElementById("results").textContent = "";
+        document.getElementById("code").value = "";
+      }
+
+      loadQuestion(0);
+      questionSelect.addEventListener("change", (e) =>
+        loadQuestion(parseInt(e.target.value))
+      );
+
+      function testCode() {
+        const code = document.getElementById("code").value;
+        const resultsDiv = document.getElementById("results");
+        resultsDiv.textContent = "";
+
+        try {
+          eval(code);
+
+          const current = questions[currentIndex];
+          let results = [];
+          for (const [testCall, expected] of Object.entries(current.tests)) {
+            try {
+              const result = eval(testCall);
+              const pass = String(result) === expected;
+              results.push(
+                `${testCall} => ${result} [${pass ? "PASS" : "FAIL"}]`
+              );
+            } catch (e) {
+              results.push(`${testCall} => ERROR: ${e.message} [FAIL]`);
+            }
+          }
+          resultsDiv.textContent = results.join("\n");
+        } catch (e) {
+          resultsDiv.textContent = `Code Error: ${e.message}`;
+        }
+      }
+    </script>
+  </body>
+</html>
