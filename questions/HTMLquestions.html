@@ -148,13 +148,14 @@
           solution: `
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Paragraph Example</title>
-</head>
-<body>
-  <p>This is my first paragraph.</p>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Paragraph Example</title>
+  </head>
+
+  <body>
+    <p>This is my first paragraph.</p>
+  </body>
 </html>
     `,
         },
@@ -165,13 +166,14 @@
           solution: `
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Header Example</title>
-</head>
-<body>
-  <h1>Welcome to My Website</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Header Example</title>
+  </head>
+
+  <body>
+    <h1>Welcome to My Website</h1>
+  </body>
 </html>
     `,
         },
@@ -182,18 +184,19 @@
           solution: `
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Table Example</title>
-</head>
-<body>
-  <table border="1">
-    <tr>
-      <td>Name</td>
-      <td>Age</td>
-    </tr>
-  </table>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Table Example</title>
+  </head>
+
+  <body>
+    <table border="1">
+      <tr>
+        <td>Name</td>
+        <td>Age</td>
+      </tr>
+    </table>
+  </body>
 </html>
     `,
         },
@@ -204,13 +207,14 @@
           solution: `
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Image Example</title>
-</head>
-<body>
-  <img src="image.jpg" alt="A sample image" />
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Image Example</title>
+  </head>
+
+  <body>
+    <img src="image.jpg" alt="A sample image" />
+  </body>
 </html>
     `,
         },
@@ -221,17 +225,18 @@
           solution: `
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>List Example</title>
-</head>
-<body>
-  <ul>
-    <li>Apples</li>
-    <li>Oranges</li>
-    <li>Bananas</li>
-  </ul>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>List Example</title>
+  </head>
+  
+  <body>
+    <ul>
+      <li>Apples</li>
+      <li>Oranges</li>
+      <li>Bananas</li>
+    </ul>
+  </body>
 </html>
     `,
         },
@@ -278,7 +283,18 @@
         questionTitle.innerHTML = `<strong>${q.name}</strong>`;
         questionDescription.innerHTML = q.description;
         document.getElementById("results").textContent = "";
-        document.getElementById("code").value = "";
+        document.getElementById("code").value = `
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  
+  <body>
+  </body>
+</html>`;
+        runCode();
       }
 
       loadQuestion(0);

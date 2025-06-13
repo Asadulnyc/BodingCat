@@ -95,7 +95,7 @@
 
       iframe {
         width: 80%;
-        height: 500px;
+        height: 300px;
       }
     </style>
   </head>
@@ -149,19 +149,20 @@
           solution: `
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Background Color</title>
-  <style>
-    body {
-      background-color: lightblue;
-    }
-  </style>
-</head>
-<body>
-  <p>Background should be light blue.</p>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Background Color</title>
+    <style>
+      body {
+        background-color: lightblue;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>Background should be light blue.</p>
+  </body>
 </html>
     `,
         },
@@ -172,18 +173,19 @@
           solution: `
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Center Text</title>
-  <style>
-    h1 {
-      text-align: center;
-    }
-  </style>
-</head>
-<body>
-  <h1>This text should be centered</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Center Text</title>
+    <style>
+      h1 {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>This text should be centered</h1>
+  </body>
 </html>
     `,
         },
@@ -194,20 +196,21 @@
           solution: `
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Styled Button</title>
-  <style>
-    button {
-      background-color: green;
-      color: white;
-      padding: 10px;
-    }
-  </style>
-</head>
-<body>
-  <button>Click Me</button>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Styled Button</title>
+    <style>
+      button {
+        background-color: green;
+        color: white;
+        padding: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button>Click Me</button>
+  </body>
 </html>
     `,
         },
@@ -218,20 +221,21 @@
           solution: `
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Div Margin</title>
-  <style>
-    div {
-      margin: 20px;
-      background-color: #eee;
-      padding: 10px;
-    }
-  </style>
-</head>
-<body>
-  <div>This div has margin</div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Div Margin</title>
+    <style>
+      div {
+        margin: 20px;
+        background-color: #eee;
+        padding: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>This div has margin</div>
+  </body>
 </html>
     `,
         },
@@ -242,18 +246,19 @@
           solution: `
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Font Style</title>
-  <style>
-    p {
-      font-family: Arial, sans-serif;
-    }
-  </style>
-</head>
-<body>
-  <p>This paragraph should use Arial font.</p>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Font Style</title>
+    <style>
+      p {
+        font-family: Arial, sans-serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>This paragraph should use Arial font.</p>
+  </body>
 </html>
     `,
         },
@@ -300,7 +305,19 @@
         questionTitle.innerHTML = `<strong>${q.name}</strong>`;
         questionDescription.innerHTML = q.description;
         document.getElementById("results").textContent = "";
-        document.getElementById("code").value = "";
+        document.getElementById("code").value = `
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <style></style>
+  </head>
+  
+  <body>
+  </body>
+</html>`;
+        runCode();
       }
 
       loadQuestion(0);

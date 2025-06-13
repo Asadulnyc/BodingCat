@@ -97,7 +97,7 @@
 
   <body>
     <img src="../images/logo.png" alt="BodingCat Logo" />
-	<h1>JS Exercises</h1>
+	<h1>JavaScript Exercises</h1>
     <table>
       <thead>
         <tr>
@@ -238,7 +238,9 @@
         questionTitle.innerHTML = `<strong>${q.name}</strong>`;
         questionDescription.innerHTML = q.description;
         document.getElementById("results").textContent = "";
-        document.getElementById("code").value = "";
+        document.getElementById("code").value = `function replaceFunctionName(parameterOne, possibleParameterTwo) {
+
+}`;
       }
 
       loadQuestion(0);
